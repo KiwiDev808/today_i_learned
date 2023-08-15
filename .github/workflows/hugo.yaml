@@ -40,6 +40,8 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+      - name: Remove cached submodules
+        run: git rm --cached themes/PaperMod
       - name: Checkout
         uses: actions/checkout@v3
         with:
